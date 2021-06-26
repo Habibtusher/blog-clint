@@ -6,7 +6,7 @@ const Blog = () => {
     const [blog, setBlog] = useState([]);
 
     useEffect(() =>{
-        fetch(`https://frozen-castle-90188.herokuapp.com/${id}`)
+        fetch(`https://frozen-castle-90188.herokuapp.com/blog/${id}`)
         .then(res => res.json())
         .then(data => setBlog(data))
     },[])
