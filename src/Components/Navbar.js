@@ -4,19 +4,7 @@ import { UserContext } from '../App';
 import './Navbar.css'
 const Navbar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext); 
-  const [isAdmin,setIsAdmin] = useState([]);
-
-  useEffect(() =>{
-    fetch('http://localhost:5000/isAdmin', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email: loggedInUser.email })
-        })
-            .then(res => res.json())
-            .then(data => setIsAdmin(data));
-  },[])
+ 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-danger fontWeight">
         <div className="container">

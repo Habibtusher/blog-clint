@@ -13,7 +13,7 @@ const AddBlog = () => {
             content: data.content,
             imageURL: imageUrl
         };
-        const url = `http://localhost:5000/addBlog`
+        const url = `https://frozen-castle-90188.herokuapp.com/addBlog`
 
 
         fetch(url, {

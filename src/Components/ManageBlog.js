@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 const ManageBlog = () => {
 const [loadALLBlog,setLoadAllBlog] = useState([]);
  useEffect(()=>{
-    fetch('http://localhost:5000/allBlogs')
+    fetch('https://frozen-castle-90188.herokuapp.com/allBlogs')
     .then(res => res.json())
     .then(data => setLoadAllBlog(data))
  },[])
