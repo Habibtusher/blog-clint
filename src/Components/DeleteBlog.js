@@ -3,7 +3,7 @@ import React from 'react';
 const DeleteBlog = ({blog}) => {
     const deleteBlog=(id)=>{
        
-            fetch(`https://frozen-castle-90188.herokuapp.com/${id}`,{
+            fetch(`https://frozen-castle-90188.herokuapp.com/deleteBlog/${id}`,{
              method: 'DELETE',
              
             })
