@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from "react";
+import Blog from './Components/Blog';
+import Home from './Components/Home';
+import Navbar from './Components/Navbar';
+import Contact from './Components/Contact';
+import Dashboard from "./Components/Dashboard";
+import Login from './Components/Login';
+import ManageBlog from './Components/ManageBlog';
+import PrivateRoute from './Components/PrivateRoute';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+export const UserContext = createContext();
+
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Navbar></Navbar>
+        <Switch>
+          <Route path="/blog/:id">
+            <Blog></Blog>
+          </Route>
+
+          <Route path="/contact">
+            <Contact></Contact>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/about">
+
+          </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <Route path="/addNewBlog">
+            <Dashboard></Dashboard>
+          </Route>
+          <Route path="/manageBlog">
+            <ManageBlog></ManageBlog>
+          </Route>
+          <Route path="/" exact>
+            <Home></Home>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 
