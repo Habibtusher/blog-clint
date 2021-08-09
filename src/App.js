@@ -7,6 +7,7 @@ import Dashboard from "./Components/Dashboard";
 import Login from './Components/Login';
 import ManageBlog from './Components/ManageBlog';
 import PrivateRoute from './Components/PrivateRoute';
+import EditBlog from './Components/EditBlog';
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,7 +28,9 @@ function App() {
           <Route path="/blog/:id">
             <Blog></Blog>
           </Route>
-
+          <Route path="/editBlog/:id">
+            <EditBlog></EditBlog>
+          </Route>
           <Route path="/contact">
             <Contact></Contact>
           </Route>

@@ -3,6 +3,7 @@ import DeleteBlog from './DeleteBlog';
 import Sidebar from './Sidebar';
 const ManageBlog = () => {
 const [loadALLBlog,setLoadAllBlog] = useState([]);
+
  useEffect(()=>{
     fetch('https://frozen-castle-90188.herokuapp.com/allBlogs')
     .then(res => res.json())

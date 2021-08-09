@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import Sidebar from './Sidebar';
 const AddBlog = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const [imageUrl, setImageUrl] = useState(null);
 
 
@@ -24,16 +24,11 @@ const AddBlog = () => {
             body: JSON.stringify(products)
         })
             .then(res => {
+                reset();
                 console.log('server side');
-                clear();
+               
             })
     }
-
-const clear =()=>{
-    document.getElementById("title").value="";
-    document.getElementById("content").value="";
-    document.getElementById("img").value="";
-}
 
     const handleImageUpload = (event) => {
         // console.log(event.target.files[0]);

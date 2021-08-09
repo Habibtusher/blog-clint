@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Blogs from './Blogs';
 const AllBlogs = () => {
     const [blogs, setBlogs] = useState([]);
-
+    console.log(blogs);
     useEffect(() => {
         fetch('https://frozen-castle-90188.herokuapp.com/allBlogs')
             .then(res => res.json())
