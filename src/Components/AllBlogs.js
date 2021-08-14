@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Blogs from './Blogs';
+import TableSpinner from './TableSpinner';
 const AllBlogs = () => {
     const [blogs, setBlogs] = useState([]);
     console.log(blogs);
@@ -10,13 +11,17 @@ const AllBlogs = () => {
 
     }, [])
     return (
-        <div className="bg-info p-4">
+        <div className=" p-4">
             <h2 className="text-center text-white">Blogs</h2>
 
             <div className="container mb-5">
                 <div className="row  ">
                     {
+                        blogs.length ?
+
                         blogs.map(blogs => <Blogs blogs={blogs}></Blogs>)
+                        :
+                         <TableSpinner />
                     }
                 </div>
             </div>
