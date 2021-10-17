@@ -15,7 +15,7 @@ const AddBlog = () => {
         };
         const url = `https://frozen-castle-90188.herokuapp.com/addBlog`
 
-
+console.log(products)
         fetch(url, {
             method: 'POST',
             headers: {
